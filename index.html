@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ефоил прокат - G-Foil</title>
+    <link rel="stylesheet" href="/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        /* Дополнительные стили для заголовка и видео */
+        #header-video-wrapper {
+            margin-top: 10px;
+        }
+        .video-container {
+            margin-top: 5px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Контейнер с фотографией -->
+    <div class="image-wrapper">
+        <img src="/images/omm2.jpg" alt="Тематическая фотография" class="background-image">
+    </div>
+
+    <!-- Тонирование поверх фонового изображения -->
+    <div class="tint-overlay" id="tint-overlay"></div>
+
+    <!-- Бургер меню -->
+    <div id="burger-menu">
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+    <div id="menu-overlay"></div>
+
+    <!-- Навигация -->
+    <nav id="menu">
+        <ul>
+            <li><img src="/logo/gfoil-logo.png" alt="G-Foil logo" class="menu-logo" style="max-height: 40px; margin: 0; padding: 0; border: none;"></li>
+            <li><a class="navbar-item" href="/index.html">Главная</a></li>
+            <li><a class="navbar-item" href="/prices.html">Цены</a></li>
+            <li><a class="navbar-item" href="/locations">Локации</a></li>
+            <li><a class="navbar-item" href="/news"> Актуальное</a></li>
+            <li><a class="navbar-item" href="#reviews">Отзывы</a></li>
+            <li><a class="navbar-item" href="#contact">Контакты</a></li>
+        </ul>
+        <div class="social-icons">
+            <a href="https://telegram.org/foilrent" target="_blank" class="social-button">
+                <img src="/logo/telegram-icon.svg" alt="Telegram">
+            </a>
+            <a href="https://www.youtube.com/@g-foil" target="_blank" class="social-button">
+                <img src="/logo/youtube-icon.svg" alt="YouTube">
+            </a>
+            <a href="https://instagram.com/foilrent" target="_blank" class="social-button">
+                <img src="/logo/instagram-icon.svg" alt="Instagram">
+            </a>
+            <a href="https://vk.com/foilrent" target="_blank" class="social-button">
+                <img src="/logo/vk-icon.svg" alt="ВКонтакте">
+            </a>
+        </div>
+    </nav>
+<p>test</p>
+    </body>
+
+    <!-- Основной контент -->
+
+    <!-- Подвал -->
+    <footer id="contact" class="footer" style="background-color: #1f1f1f; padding: 20px 0;">
+        <div class="content has-text-centered" style="color: #ffffff;">
+            <p>© 2025 G-Foil прокат. Все права защищены.</p>
+            <p>Телефон/WhatsApp/Telegram +7(921)585-00-89     Instagram/Vk - @foilrent</p>
+        </div>
+    </footer>    
+
+    <!-- Скрипты -->
+    <script>
+        const burgerMenu = document.getElementById('burger-menu');
+        const menuOverlay = document.getElementById('menu-overlay');
+        const tintOverlay = document.getElementById('tint-overlay');
+        const menu = document.getElementById('menu');
+        const extraText = document.getElementById('extra-text');
+        const expandLink = document.querySelector('.expand-link');
+
+        function toggleDescription() {
+            extraText.classList.toggle('show');
+            expandLink.style.display = 'none';
+        }
+
+        function toggleMenu() {
+            document.body.classList.toggle('open');
+            menuOverlay.style.display = menuOverlay.style.display === 'block' ? 'none' : 'block';
+        }
+
+        function closeMenu(event) {
+            if (!menu.contains(event.target) && !burgerMenu.contains(event.target)) {
+                document.body.classList.remove('open');
+                menuOverlay.style.display = 'none';
+            }
+        }
+
+        function togglePrices() {
+            const priceTable = document.getElementById('priceTable');
+            priceTable.style.display = priceTable.style.display === 'none' || priceTable.style.display === '' ? 'block' : 'none';
+        }
+
+        burgerMenu.addEventListener('click', toggleMenu);
+        document.addEventListener('click', closeMenu);
+    </script>
+</body>
+</html>
