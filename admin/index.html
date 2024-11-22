@@ -3,25 +3,32 @@
 <head>
   <title>Content Manager</title>
   <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
-  <script src="netlify-cms.min.js"></script> <!-- или ссылка на CDN, если используешь -->
+  <script src="https://cdn.jsdelivr.net/npm/netlify-cms@latest/dist/netlify-cms.min.js"></script>
 </head>
 <body>
   <script>
+    // Проверяем, что Netlify Identity инициализировано корректно
     if (window.netlifyIdentity) {
       window.netlifyIdentity.on("init", user => {
         if (!user) {
           window.netlifyIdentity.on("login", () => {
             document.location.href = "/admin/";
           });
-        } else {
-          document.location.href = "/admin/";
         }
+      });
+    } else {
+      document.addEventListener('netlifyIdentity', () => {
+        window.netlifyIdentity.init();
       });
     }
 
-    // Явное указание конфигурации
-    CMS.init({
-      config: "/admin/config.yml"
+    // Явное указание конфигурации Netlify CMS
+    window.CMS_MANUAL_INIT = true;
+
+    document.addEventListener('DOMContentLoaded', function() {
+      CMS.init({
+        config: "/admin/config.yml"
+      });
     });
   </script>
 </body>
