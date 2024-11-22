@@ -10,10 +10,10 @@ public_folder: "/images/uploads"
 
 collections:
   - name: "posts"
-    label: "Статьи"
+    label: "News"
     folder: "content/posts"
     create: true
     fields:
-      - { name: "title", label: "Заголовок", widget: "string" }
-      - { name: "date", label: "Дата", widget: "datetime" }
-      - { name: "body", label: "Контент", widget: "markdown" }
+      - { name: "title", label: "Title", widget: "string" }
+      - { name: "date", label: "Date", widget: "datetime" }
+      - { name: "body", label: "Content", widget: "markdown" }
