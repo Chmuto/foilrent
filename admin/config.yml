@@ -2,7 +2,9 @@ backend:
   name: git-gateway
   branch: main
 
-media_folder: "images/uploads" # Папка для загрузки медиафайлов
+site_url: https://foilrent.netlify.app
+
+media_folder: "images/uploads"
 public_folder: "/images/uploads"
 
 collections:
