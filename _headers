@@ -1,3 +1,6 @@
 /admin/*
   Access-Control-Allow-Origin: *
   Content-Type: text/yaml
+
+/admin/index.html
+  Content-Type: text/html
