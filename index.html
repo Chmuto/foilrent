@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ефоил прокат - G-Foil</title>
+    <link rel="stylesheet" href="/css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        /* Дополнительные стили для заголовка и видео */
+        #header-video-wrapper {
+            margin-top: 10px;
+        }
+        .video-container {
+            margin-top: 5px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Контейнер с фотографией -->
+    <div class="image-wrapper">
+        <img src="images/omm.jpg" alt="Тематическая фотография" class="background-image">
+    </div>
+
+    <!-- Тонирование поверх фонового изображения -->
+    <div class="tint-overlay" id="tint-overlay"></div>
+
+    <!-- Бургер меню -->
+    <div id="burger-menu">
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+    <div id="menu-overlay"></div>
+
+    <!-- Навигация -->
+    <nav id="menu">
+        <ul>
+            <li><img src="logo/gfoil-logo.png" alt="G-Foil logo" class="menu-logo" style="max-height: 40px; margin: 0; padding: 0; border: none;"></li>
+            <li><a class="navbar-item" href="#home">Главная</a></li>
+            <li><a class="navbar-item" href="/prices">Цены</a></li>
+            <li><a class="navbar-item" href="/locations">Локации</a></li>
+            <li><a class="navbar-item" href="/news"> Актуальное</a></li>
+            <li><a class="navbar-item" href="#reviews">Отзывы</a></li>
+            <li><a class="navbar-item" href="#contact">Контакты</a></li>
+        </ul>
+        <div class="social-icons">
+            <a href="https://telegram.org/foilrent" target="_blank" class="social-button">
+                <img src="logo/telegram-icon.svg" alt="Telegram">
+            </a>
+            <a href="https://www.youtube.com/@g-foil" target="_blank" class="social-button">
+                <img src="logo/youtube-icon.svg" alt="YouTube">
+            </a>
+            <a href="https://instagram.com/foilrent" target="_blank" class="social-button">
+                <img src="logo/instagram-icon.svg" alt="Instagram">
+            </a>
+            <a href="https://vk.com/foilrent" target="_blank" class="social-button">
+                <img src="logo/vk-icon.svg" alt="ВКонтакте">
+            </a>
+        </div>
+    </nav>
+
+    <!-- Основной контент -->
+    <div id="content">
+        <section id="home" class="hero is-fullheight">
+            <div class="hero-body">
+                <div class="container">
+                    <div id="header-video-wrapper">
+                        <h1 class="title" style="color: #00aaff; text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7); text-align: center;">
+                            G-foil прокат - летай над водой, серфинг без ветра и волн
+                        </h1>
+                        <div class="video-container">
+                            <iframe src="https://kinescope.io/embed/8V9JgEZrSiUrviDMmB1seL" allow="autoplay; fullscreen; picture-in-picture; encrypted-media; gyroscope; accelerometer; clipboard-write;" frameborder="0" allowfullscreen style="display: block; margin: 0 auto;"></iframe>
+                        </div>
+                    </div>
+                    <div class="text-and-buttons">
+                        <p>
+                            Устали от обычных водных развлечений? Хочется чего-то нового, необычного?
+Чем развлечь близких на красивом берегу? Попробуйте испытать магию свободного полета над водой с электро гидрофойлами G-Foil!
+ Это не просто катание, а настоящий полет, полный легкости и грации. Вы почувствуете себя частью природы,
+  ощутив полную свободу и гармонию. Максимум драйва и минимум опасностей!
+                         
+                            <span class="expand-link" onclick="toggleDescription()">подробнее...</span>
+                        </p>
+                        <div id="extra-text" class="hidden-text">
+                            <p>Что это такое вообще?
+G-Foil — это симбиоз электросамоката и метеора на подводных крыльях. Он экологичнее и безопаснее гидроцикла. 
+Если вы уже освоили сап, то переходите на новый уровень скорости и ощущений! Крутые питерские ребята разработали этот новый вид транспорта специально для тех, кто ищет яркие впечатления.
+Уверены, мы удивим вас и всех ваших друзей!</p>
+<p>Каждый момент катания станет незабываемым, ведь вы будете парить над водой, ощущая полное единение с окружающей средой. Это абсолютно безопасно и подарит яркие эмоции вам и вашим друзьям и подругам, 
+и даже детям, старше 10 лет.
+Чтобы почувствовать себя пилотом индивидуального метеора не надо долго учиться, можно не быть спортсменом. Надо просто быть уравновешенным и поймать баланс😁
+Приезжай, убедиться! Ждем!</p></div>
+                        <div class="buttons mt-4" style="display: flex; justify-content: center;">
+                            <a href="https://g-foil.com/about" class="button is-warning" target="_blank">Подробнее о G-Foil</a>
+                            <a class="button is-primary" href="#contact">Записаться</a>
+                            <button class="button is-link" onclick="togglePrices()">Цены</button>
+                        </div>  
+                    </div>
+                    <div id="priceTable" class="price-table">
+                        <table class="table is-striped is-fullwidth">
+                            <thead>
+                                <tr>
+                                    <th>Услуга</th>
+                                    <th>Цена</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Прокат G-Foil (30 минут)</td>
+                                    <td>3 000 руб.</td>
+                                </tr>
+                                <tr>
+                                    <td>Прокат G-Foil (1 час)</td>
+                                    <td>5 000 руб.</td>
+                                </tr>
+                                <tr>
+                                    <td>Обучение с инструктором (1 час)</td>
+                                    <td>7 000 руб.</td>
+                                </tr>
+                                <tr>
+                                    <td>Абонемент на 5 занятий (1 час)</td>
+                                    <td>30 000 руб.</td>
+                                </tr>
+                                <tr>
+                                    <td>Абонемент на 10 занятий (1 час)</td>
+                                    <td>55 000 руб.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <a href="/prices" class="button is-primary mt-4">Все цены и абонементы</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Локации -->
+        <section id="locations" class="section locations-section" >
+            <div class="container">
+                <h2 class="title has-text-centered locations-title" style="color: #00aaff;">Локации</h2>
+                <div class="columns is-multiline">
+                    <div class="column is-one-third">
+                        <div class="map-container">
+                            <script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A5c46595fc521fee276895ec689c293082c6c1b03d03564ad94b5a0bbae530893&amp;width=100%&amp;height=240&amp;lang=ru_RU&amp;scroll=true"></script>
+                        </div>
+                    </div>
+                    <div class="column is-one-third">
+                        <div class="map-container">
+                            <script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A01a4305e650c97720e843a8b9c1bb1c20bd2fe0a48b8c8ff5055319a3ac172f0&amp;width=100%&amp;height=240&amp;lang=ru_RU&amp;scroll=true"></script>
+                        </div>
+                    </div>
+                    <div class="column is-one-third">
+                        <div class="map-container">
+                            <script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A01a4305e650c97720e843a8b9c1bb1c20bd2fe0a48b8c8ff5055319a3ac172f0&amp;width=100%&amp;height=240&amp;lang=ru_RU&amp;scroll=true"></script>
+                        </div>
+                    </div>
+                </div>
+                <div class="buttons is-centered mt-4">
+                    <a href="/locations" class="button is-info">Все локации</a>
+                </div>
+            </div>
+        </section>
+        <!-- Отзывы -->
+        <section id="reviews" class="section" style="background-color: transparent;">
+            <div class="container">
+                <h2 class="title has-text-centered" style="color: #00aaff;">Довольные клиенты</h2>
+                <div class="reviews-container">
+                    <div class="review-item">
+                        <iframe style="width:100%;height:800px;border:1px solid transparent;border-radius:8px;box-sizing:border-box" 
+                                src="https://yandex.ru/maps-reviews-widget/224391157129?comments"></iframe>
+                        <a href="https://yandex.ru/maps/org/fankiveyk/224391157129/" target="_blank" 
+                           style="box-sizing:border-box;text-decoration:none;color:transparent;font-size:10px;font-family:YS Text,sans-serif;position:absolute;bottom:8px;width:100%;text-align:center;left:0;overflow:hidden;text-overflow:ellipsis;display:block;max-height:14px;white-space:nowrap;">
+                           ФанкиВейк
+                        </a>
+                    </div>
+                    <div class="review-item">
+                        <iframe style="width:100%;height:800px;border:1px solid #e6e6e6;border-radius:8px;box-sizing:border-box" 
+                                src="https://yandex.ru/maps-reviews-widget/147162421577?comments"></iframe>
+                        <a href="https://yandex.ru/maps/org/take_off_wake_club/147162421577/" target="_blank" 
+                           style="box-sizing:border-box;text-decoration:none;color:#b3b3b3;font-size:10px;font-family:YS Text,sans-serif;position:absolute;bottom:8px;width:100%;text-align:center;left:0;overflow:hidden;text-overflow:ellipsis;display:block;max-height:14px;white-space:nowrap;">
+                           Take Off Wake 
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+</div>        
+
+<!-- Подвал -->
+<footer id="contact" class="footer">
+    <div class="footer-content">
+        <p class="contact-info">
+            Телефон / WhatsApp / Telegram: <a href="tel:+79215850089">+7 (921) 585-00-89</a>  
+            Instagram / VK: <a href="https://instagram.com/foilrent" target="_blank">@foilrent</a>
+        </p>
+        <div class="social-links">
+            <a href="https://telegram.org/foilrent" target="_blank">
+                <img src="/logo/telegram-icon.svg" alt="Telegram">
+            </a>
+            <a href="https://www.youtube.com/@g-foil" target="_blank">
+                <img src="/logo/youtube-icon.svg" alt="YouTube">
+            </a>
+            <a href="https://instagram.com/foilrent" target="_blank">
+                <img src="/logo/instagram-icon.svg" alt="Instagram">
+            </a>
+            <a href="https://vk.com/foilrent" target="_blank">
+                <img src="/logo/vk-icon.svg" alt="ВКонтакте">
+            </a>
+        </div>
+    </div>
+</footer>
+
+
+
+       
+
+    <!-- Скрипты -->
+    <script>
+        const burgerMenu = document.getElementById('burger-menu');
+        const menuOverlay = document.getElementById('menu-overlay');
+        const tintOverlay = document.getElementById('tint-overlay');
+        const menu = document.getElementById('menu');
+        const extraText = document.getElementById('extra-text');
+        const expandLink = document.querySelector('.expand-link');
+
+        function toggleDescription() {
+            extraText.classList.toggle('show');
+            expandLink.style.display = 'none';
+        }
+
+        function toggleMenu() {
+            document.body.classList.toggle('open');
+            menuOverlay.style.display = menuOverlay.style.display === 'block' ? 'none' : 'block';
+        }
+
+        function closeMenu(event) {
+            if (!menu.contains(event.target) && !burgerMenu.contains(event.target)) {
+                document.body.classList.remove('open');
+                menuOverlay.style.display = 'none';
+            }
+        }
+
+        function togglePrices() {
+            const priceTable = document.getElementById('priceTable');
+            priceTable.style.display = priceTable.style.display === 'none' || priceTable.style.display === '' ? 'block' : 'none';
+        }
+
+        burgerMenu.addEventListener('click', toggleMenu);
+        document.addEventListener('click', closeMenu);
+    </script>
+</body>
+</html>

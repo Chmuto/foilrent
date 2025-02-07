@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="RU">
+<head>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Цены на прокат и обучение | G-Foil</title>
+    <link rel="stylesheet" href="/css/prices.css">
+    <link rel="stylesheet" href="/css/styles.css">    
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const cards = document.querySelectorAll('.card');
+
+            cards.forEach(card => {
+                const header = card.querySelector('.card-header');
+
+                if (header) {
+                    header.addEventListener('click', () => {
+                        if (window.innerWidth <= 768) {
+                            card.classList.toggle('open');
+                            const content = card.querySelector('.card-content');
+                            if (content) {
+                                content.style.display = card.classList.contains('open') ? 'block' : 'none';
+                            }
+                        }
+                    });
+                }
+            });
+        });
+    </script>
+</head>
+<body>
+    <div class="image-wrapper">
+        <img src="/images/omm.jpg" alt="Фоновая фотография" class="background-image">
+    </div>
+    <div class="tint-overlay"></div>
+
+    <nav id="menu">
+        <ul>
+            <li><img src="/logo/gfoil-logo.png" alt="G-Foil logo" style="max-height: 40px;"></li>
+            <li><a href="/index.html">Главная</a></li>
+            <li><a href="/prices/">Цены</a></li>
+            <li><a href="/locations/">Локации</a></li>
+            <li><a href="/news/">Актуальное</a></li>
+            <li><a href="#contact">Контакты</a></li>
+        </ul>
+    </nav>
+
+    <div id="content">
+        <div class="container">
+            <!-- Верхний блок с заголовком и описанием -->
+            <div class="section-header">
+                <h2 class="main-title">Стоимость проката и обучения на ефойле</h2>
+                <p class="section-description">
+                    Испытайте невероятное чувство полета над водой! Наши гидрофойлы — это идеальный способ наслаждаться катанием без волн и ветра.  
+                    Мы предлагаем <b>прокат без инструктора</b> для опытных райдеров и <b>обучение</b> с профессиональными инструкторами для новичков.  
+                </p>
+                <div class="separator"></div>
+            </div>
+    
+            <!-- Заголовок перед карточками -->
+            <h3 class="sub-title has-text-centered">Выберите удобный вариант</h3>
+    
+            <!-- Блок с карточками цен -->
+            <div class="cards-container">
+                
+                <!-- Обучение на ефойле -->
+                <div class="card">
+                    <header class="card-header">
+                        <p class="card-header-title">Обучение с инструктором</p>
+                    </header>
+                    <div class="card-content">
+                        <div class="content">
+                            <img src="/images/lesson.jpg" alt="Обучение с инструктором" class="price-image">
+                            <p>
+                                Отличный вариант для новичков! Подходит для всех, независимо от возраста и спортивной подготовки.  
+                                Наши инструкторы помогут быстро освоить управление ефойлом и уверенно кататься.
+                            </p>
+                            <ul class="price-list">
+                                <li>30 минут — <b>5 000 руб.</b></li>
+                                <li>1 час — <b>8 000 руб.</b></li>
+                                <li>2 часа — <b>15 000 руб.</b></li>
+                                <li>3 часа — <b>21 000 руб.</b></li>
+                                <li>Абонемент (5 часов) — <b>30 000 руб.</b></li>
+                            </ul>
+                            <div class="buttons">
+                                <a href="#contact" class="button is-primary">Записаться</a>
+                                <a href="/buy-pass/" class="button is-warning">Купить абонемент</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+    
+                <!-- Прокат ефойла без инструктора -->
+                <div class="card">
+                    <header class="card-header">
+                        <p class="card-header-title">Прокат ефойла без инструктора</p>
+                    </header>
+                    <div class="card-content">
+                        <div class="content">
+                            <img src="/images/rider1.jpg" alt="Прокат ефойла" class="price-image">
+                            <p>
+                                Для уверенных райдеров, кто уже освоил технику и хочет насладиться свободным катанием.
+                                Мы предоставляем качественное оборудование и полную свободу действий!
+                            </p>
+                            <ul class="price-list">
+                                <li>15 минут — <b>2 700 руб.</b></li>
+                                <li>30 минут — <b>4 200 руб.</b></li>
+                                <li>1 час — <b>6 500 руб.</b></li>
+                                <li>2 часа — <b>12 400 руб.</b></li>
+                                <li>Абонемент 10 часов — <b>45 000 руб.</b></li>
+                            </ul>
+                            <div class="buttons">
+                                <a href="#contact" class="button is-primary">Записаться</a>
+                                <a href="/buy-pass/" class="button is-warning">Купить абонемент</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+    
+            </div>
+    
+            <!-- Ссылка на правила -->
+            <p class="rules-link has-text-centered">
+                <a href="/rules/">Правила посещения</a> и <a href="/faq/">Часто задаваемые вопросы</a>.
+            </p>
+        </div>
+    </div>
+    
+
+    <footer id="contact" class="footer">
+        <div class="footer-content">
+            <p class="contact-info">
+                Телефон / WhatsApp / Telegram: <a href="tel:+79215850089">+7 (921) 585-00-89</a>  
+                Instagram / VK: <a href="https://instagram.com/foilrent" target="_blank">@foilrent</a>
+            </p>
+            <div class="social-links">
+                <a href="https://telegram.org/foilrent" target="_blank">
+                    <img src="/logo/telegram-icon.svg" alt="Telegram">
+                </a>
+                <a href="https://www.youtube.com/@g-foil" target="_blank">
+                    <img src="/logo/youtube-icon.svg" alt="YouTube">
+                </a>
+                <a href="https://instagram.com/foilrent" target="_blank">
+                    <img src="/logo/instagram-icon.svg" alt="Instagram">
+                </a>
+                <a href="https://vk.com/foilrent" target="_blank">
+                    <img src="/logo/vk-icon.svg" alt="ВКонтакте">
+                </a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

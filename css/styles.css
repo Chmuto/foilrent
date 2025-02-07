@@ -1,0 +1,470 @@
+/* Упрощённая таблица стилей с предложенными улучшениями */
+
+body {
+    margin: 0;
+    padding-top: 10px; /* Отступ, чтобы меню не перекрывало контент */
+    position: relative; /* Для позиционирования фона */
+    overflow-x: hidden; /* Отключение горизонтальной прокрутки */
+    color: white; /* Установка основного цвета текста */
+    font-family: 'Roboto', sans-serif;
+}
+
+#header-video-wrapper {
+    margin-top: 10px;
+}
+.video-container {
+    height: 60vh;
+}
+
+.video-container iframe {
+    width: 100%;
+    height: 100%;
+}
+
+.image-wrapper {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -2;
+    pointer-events: none;
+    overflow: hidden;
+}
+
+.background-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: grayscale(50%) brightness(70%);
+}
+
+.tint-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: -1;
+}
+
+#menu {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 130px;
+    height: 100%;
+    background: #1e1d1d;
+    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.5);
+    transform: translateX(100%);
+    transition: transform 0.3s ease;
+    z-index: 1001; /* Увеличено значение, чтобы меню было поверх затемнения */
+}
+
+
+/* Стили для затемнения контента при открытии меню */
+#menu-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: none;
+    z-index: 1000; /* Сделаем выше, чтобы затемнение было над контентом, но под меню */
+}
+
+.open #menu-overlay {
+    display: block; /* Показать затемнение при открытии меню */
+}
+
+#menu ul {
+    list-style: none;
+    padding: 60px 20px 20px 20px;
+    margin: 0;
+    text-align: right;
+}
+
+#menu ul li a {
+    position: relative;
+    text-decoration: none;
+    color: white;
+    background: transparent;
+    font-weight: 400;
+    transition: color 0.3s ease;
+}
+
+#menu ul li a::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;  /* Расположение подчеркивания ниже текста */
+    left: 0;
+    width: 0;
+    height: 2px;  /* Толщина линии */
+    background: #00aaff;  /* Цвет линии */
+    transition: width 0.4s ease;
+}
+
+#menu ul li a:hover::after {
+    width: 100%;  /* Линия растягивается до полной ширины текста */
+}
+
+#burger-menu {
+    position: fixed;
+    top: 5px;
+    right: 10px;
+    width: 60px;
+    height: 50px;
+    cursor: pointer;
+    z-index: 1000;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 5px;
+    padding: 5px;
+}
+
+#burger-menu div {
+    width: 100%;
+    height: 5px;
+    background: #00aaff;
+    margin: 6px 0;
+    transition: all 0.3s ease;
+}
+
+#burger-menu.open div:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+
+#burger-menu.open div:nth-child(2) {
+    opacity: 0;
+}
+
+#burger-menu.open div:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
+}
+
+.open #menu {
+    transform: translateX(0);
+}
+
+.contact-info {
+    text-align: center;
+}
+
+.social-icons {
+    display: inline-block;
+    text-align: right;
+    width: 100%;
+    padding-right: 10px;
+}
+
+.social-button img {
+    height: 24px;
+}
+
+.expand-link {
+    color: #00aaff;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.expand-link:hover {
+    color: #ffcc00;
+    text-decoration: underline;
+}
+
+.text-and-buttons p {
+    font-size: 1.2em;
+    font-weight: bold;
+    text-align: center;
+    color: #f5f6f7;
+}
+#extra-text {
+    font-size: 1em;
+    color: #dddddd;  /* Менее контрастный текст */
+    margin-top: 15px;
+    padding: 10px 20px;
+    border-left: 4px solid #00aaff;  /* Вертикальная линия для выделения */
+    background-color: rgba(0, 0, 0, 0.05);  /* Слегка затемненный фон */
+}
+.hidden-text {
+    display: none;
+    overflow: hidden;
+    transition: max-height 0.5s ease-out, padding 0.5s ease-out;
+}
+
+.hidden-text.show {
+    display: block;
+    max-height: 500px;
+    padding-top: 10px;
+}
+
+.action-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+        /* Стили для таблицы с ценами */
+        .price-table {
+            display:none;
+            margin-top: 20px;
+            text-align: center;
+        }
+        .price-table table {
+            margin: 0 auto;
+            max-width: 800px;
+            width: 100%;
+            border-radius: 10px;
+            background-color: #ffffff;
+            color: #3a3a3a;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        .price-table table th,
+        .price-table table td {
+            padding: 10px;
+            border-bottom: 1px solid #ccc;
+        }
+        .price-table table th {
+            color: #3a3a3a;
+            font-weight: bold;
+            background-color: #f7f7f7;
+        }
+        .price-table table tbody tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+        .price-table table tbody tr:nth-child(odd) {
+            background-color: #ffffff;
+        }
+
+/* Карточка локации */
+.location-card {
+    background-color: #ffffff;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Заголовок слайдера */
+.slider-title {
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+    padding: 15px;
+    margin: 0;
+    text-align: center;
+}
+
+/* Контент внутри карточки */
+.location-content {
+    padding: 15px;
+    line-height: 1.6;
+}
+
+/* Описание */
+.location-description {
+    font-size: 14px;
+    color: #555;
+    margin-bottom: 10px;
+}
+
+/* Список услуг */
+.location-services {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 10px 0;
+}
+
+.location-services li {
+    font-size: 14px;
+    color: #555;
+    margin-bottom: 5px;
+    padding-left: 20px;
+    position: relative;
+}
+
+.location-services li::before {
+    content: '•';
+    color: #0078d7;
+    font-size: 16px;
+    font-weight: bold;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+/* Примечание */
+.location-note {
+    font-size: 14px;
+    font-style: italic;
+    color: #0078d7;
+    text-align: right;
+    margin-top: 10px;
+}
+
+/* Контейнер карты */
+.map-container {
+    margin-top: 10px;
+    border-radius: 8px;
+    overflow: hidden;
+    border: 1px solid #ddd;
+}
+
+
+.map-container {
+    overflow: hidden;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+
+
+.reviews-container {
+    display: flex;
+    flex-wrap: wrap; /* Позволяет переносить блоки на новую строку, если не хватает места */
+    justify-content: space-between; /* Пространство между колонками */
+    gap: 20px; /* Расстояние между блоками */
+    margin-top: 20px;
+}
+
+.review-item {
+    flex: 0 0 700px; /* Фиксированная ширина 700px */
+    height: 400px; /* Фиксированная высота */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Легкая тень */
+    position: relative;
+    border-radius: 8px;
+    overflow: hidden;
+    background: #ffffff; /* Белый фон */
+    margin: 0 auto; /* Центрирование блоков */
+}
+
+@media (max-width: 1440px) {
+    .reviews-container {
+        justify-content: center; /* На экранах меньше 1440px выравниваем по центру */
+    }
+}
+
+@media (max-width: 768px) {
+
+
+    .review-item {
+        flex: 0 0 100%; /* Блок занимает всю ширину */
+    }
+}
+
+
+@media (min-width: 768px) {
+    #burger-menu {
+        display: none;
+    }
+
+    #menu {
+        position: fixed;
+        top: 0;
+        right: 0;
+        left: 0;
+        width: auto;
+        height: auto;
+        background: #1e1d1d;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+        transform: none;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 10px 20px;
+    }
+
+    #menu ul {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0;
+        margin: 0;
+        width: 100%;
+        white-space: nowrap;
+    }
+
+    #menu ul li {
+        margin: 0 15px;
+    }
+
+    #menu ul li a:hover {
+        text-decoration: underline;
+    }
+
+    .social-icons {
+        position: static;
+        display: inline-block;
+        margin: 0;
+        text-align: right;
+        width: auto;
+        white-space: nowrap;
+    }
+
+    nav {
+        position: relative;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px 20px;
+    }
+}
+
+        /* Исправление высоты верхнего меню для десктопа */
+        @media (min-width: 824px) {
+            #menu {
+                height: 60px;
+                display: flex;
+                align-items: center;
+                padding: 0 20px;
+            }
+        }
+
+        .footer {
+            background-color: #1f1f1f;
+            padding: 20px 0;
+            text-align: center;
+            color: white;
+            font-size: 16px;
+        }
+        
+        .footer-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .contact-info {
+            font-weight: bold;
+            line-height: 1.5;
+        }
+        
+        .contact-info a {
+            color: #00aaff;
+            text-decoration: none;
+        }
+        
+        .contact-info a:hover {
+            text-decoration: underline;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            margin-top: 10px;
+        }
+        
+        .social-links a img {
+            width: 32px;
+            height: 32px;
+            transition: transform 0.3s ease;
+        }
+        
+        .social-links a:hover img {
+            transform: scale(1.2);
+        }
+        

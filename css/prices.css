@@ -1,0 +1,118 @@
+.sub-title {
+    font-size: 22px;
+    font-weight: bold;
+    color: #00aaff;
+    text-align: center;
+    margin-bottom: 10px;
+    margin-top: -10px;
+}
+
+.price-list {
+    padding-left: 0;
+    list-style-type: none;
+}
+
+.price-list li {
+    font-size: 18px;
+    margin-bottom: 5px;
+}
+
+
+.section-header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+.main-title {
+    font-size: 28px;
+    font-weight: bold;
+    color: #00aaff;
+    margin-bottom: 5px;
+    text-align: center;
+    margin-top: 60px;
+}
+.section-title {
+    font-size: 24px;
+    font-weight: bold;
+    color: #00aaff; /* Контрастный цвет */
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 15px;
+    text-transform: uppercase; /* Делаем заглавными буквами */
+    letter-spacing: 1px; /* Добавляем немного воздуха */
+}
+
+.section-description {
+    font-size: 18px;
+    color: white; /* Сделаем цвет 100% белым */
+    max-width: 700px;
+    margin: 0 auto 20px;
+    line-height: 1.6;
+    text-align: center;
+}
+
+.separator {
+    width: 80px;
+    height: 4px;
+    background-color: #00aaff;
+    margin: 0 auto 5px;
+    border-radius: 2px;
+}
+
+.card {
+    margin-bottom: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.card-header-title {
+    color: #00aaff;
+    font-weight: bold;
+}
+.card-content {
+    transition: max-height 0.5s ease;
+}
+
+@media (min-width: 1024px) {
+    .card-content {
+        display: block;
+    }
+}
+
+.card.open .card-content {
+    display: block;
+}
+
+.highlight {
+    background-color: #f7f7f7;
+    padding: 15px;
+    border-radius: 10px;
+}
+.button.is-primary {
+    margin-top: 10px;
+}
+@media (max-width: 768px) {
+    .card-header-title + .preview-text {
+        display: inline;
+        color: #555;
+        font-weight: normal;
+    }
+    .card-content {
+        display: none;
+    }
+}
+.title {
+    margin-top: 70px;
+}
+@media (min-width: 1024px) {
+    .cards-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.cards-container > div {
+    flex: 1 1 calc(50% - 20px);
+    box-sizing: border-box;
+}
+}
